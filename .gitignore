@@ -12,6 +12,7 @@ dist
 dist-ssr
 dist-firefox-v2
 *.local
+.yarn
 
 # Editor directories and files
 .vscode/*

@@ -10,5 +10,5 @@ it('should load and display Popup', async () => {
     </Provider>
   );
 
-  expect(screen.getByText('Popup Counter')).toBeInTheDocument();
+  expect(screen.getByText('Volume Control')).toBeInTheDocument();
 });

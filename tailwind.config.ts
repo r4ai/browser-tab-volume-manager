@@ -7,5 +7,4 @@ export default {
       // ...
     },
   },
-  plugins: [],
 } as Config;
