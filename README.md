@@ -13,6 +13,22 @@
   <img src="https://github.com/r4ai/browser-tab-volume-manager/actions/workflows/ci.yml/badge.svg">
 </div>
 
+## Installation
+
+### Chrome / Edge
+
+- Go to [Releases](https://github.com/r4ai/browser-tab-volume-manager/releases/latest) and download the latest `browser-tab-volume-manager.zip` file.
+- Go to the browser address bar and type `chrome://extensions`.
+- Check the `Developer Mode` button to enable it.
+- Drag and drop the `browser-tab-volume-manager.zip` file to the browser window.
+
+### Firefox
+
+- Go to [Releases](https://github.com/r4ai/browser-tab-volume-manager/releases/latest) and download the latest `browser-tab-volume-manager-firefox.zip` file.
+- Go to the browser address bar and type `about:addons`.
+- Click on the `Settings` button and select `Install Add-on From File...`.
+- Select the `browser-tab-volume-manager-firefox.zip` file.
+
 ## Development
 
 ### Prerequisites

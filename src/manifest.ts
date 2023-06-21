@@ -7,8 +7,8 @@ import { version } from '../package.json';
 
 const manifest = defineManifest(async (env) => ({
   manifest_version: 3,
-  name: `${env.mode === 'development' ? '[Dev] ' : ''}Browser Extension TypeScript & React Starter`,
-  description: 'Browser Extension, TypeScript, React',
+  name: `${env.mode === 'development' ? '[Dev] ' : ''}Browser Tab Volume Manager`,
+  description: 'Super simple browser extension to adjust media volume on active tab.',
   version,
   background: {
     service_worker: 'background/index.ts',
