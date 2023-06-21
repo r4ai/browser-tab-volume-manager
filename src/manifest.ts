@@ -18,15 +18,6 @@ const manifest = defineManifest(async (env) => ({
     page: 'options/options.html',
     open_in_tab: true,
   },
-  web_accessible_resources: [
-    {
-      resources: [
-        // this file is web accessible; it supports HMR b/c it's declared in `rollupOptions.input`
-        'welcome/welcome.html',
-      ],
-      matches: ['<all_urls>'],
-    },
-  ],
   action: {
     default_popup: 'popup/popup.html',
     default_icon: {

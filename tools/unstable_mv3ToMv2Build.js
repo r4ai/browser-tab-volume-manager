@@ -33,12 +33,4 @@ for (const permission of manifest.host_permissions) {
 }
 delete manifest.host_permissions;
 
-const tempResources = [];
-for (const obj of manifest.web_accessible_resources) {
-  for (const resource of obj.resources) {
-    tempResources.push(resource);
-  }
-}
-manifest.web_accessible_resources = tempResources;
-
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
