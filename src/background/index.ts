@@ -13,7 +13,7 @@ browser.runtime.onInstalled.addListener(async (details) => {
 });
 
 // Handle messages from popup
-browser.runtime.onMessage.addListener(async (message: Message, sender, sendResponse) => {
+browser.runtime.onMessage.addListener(async (message: Message) => {
   try {
     const bucket = getBucket<TabInfo>(message.tabId.toString());
     const tabInfo = await getTabInfoSafely(message.tabId);

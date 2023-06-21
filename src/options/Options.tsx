@@ -1,4 +1,4 @@
-import { Box, Button, Container, List, MantineProvider, Title } from '@mantine/core';
+import { Box, Button, Container, MantineProvider, Title } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
 import { FiGithub } from 'react-icons/fi';
 

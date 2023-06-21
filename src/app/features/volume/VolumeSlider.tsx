@@ -50,6 +50,7 @@ export const VolumeSlider: FC = () => {
       const message: Message = { type: 'SET_VOLUME', tabId, volume };
       browser.runtime.sendMessage(message);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [volume]);
 
   return (
