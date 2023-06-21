@@ -19,9 +19,6 @@ jobs:
           node-version: 16.x
           cache: 'yarn'
 
-      - name: Install yarn@v3
-        run: corepack prepare yarn@stable --activate && yarn set version stable
-
       - name: Install dependencies
         run: rm -rf node_modules && yarn install --immutable --immutable-cache --check-cache
 
