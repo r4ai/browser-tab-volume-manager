@@ -1,0 +1,65 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install zip
+        run: sudo apt-get install zip
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: rm -rf node_modules && yarn install --immutable --immutable-cache --check-cache
+
+      - name: Build
+        run: yarn build
+
+      - name: Zip the dist folder
+        run: zip -r browser-tab-volume-manager.zip dist/
+
+      - name: Zip the dist-firefox-v2 folder
+        run: zip -r browser-tab-volume-manager-firefox.zip dist-firefox-v2/
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+
+      - name: Upload Release Asset browser-tab-volume-manager.zip
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./browser-tab-volume-manager.zip
+          asset_name: browser-tab-volume-manager.zip
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset browser-tab-volume-manager-firefox.zip
+        id: upload-release-asset-firefox
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./browser-tab-volume-manager-firefox.zip
+          asset_name: browser-tab-volume-manager-firefox.zip
+          asset_content_type: application/zip
