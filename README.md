@@ -6,6 +6,13 @@
   <p>Super simple browser extension <br> to adjust media volume on active tab.</p>
 </div>
 
+---
+
+<div align="center">
+  <img src="https://github.com/r4ai/browser-tab-volume-manager/actions/workflows/release.yml/badge.svg">
+  <img src="https://github.com/r4ai/browser-tab-volume-manager/actions/workflows/ci.yml/badge.svg">
+</div>
+
 ## Development
 
 ### Prerequisites
