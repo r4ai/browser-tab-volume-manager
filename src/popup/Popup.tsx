@@ -4,7 +4,8 @@ import { useColorScheme } from '@mantine/hooks';
 import { VolumeSliders } from '../app/features/volume/VolumeSliders';
 
 const Popup = () => {
-  document.body.className = 'w-[20rem] h-[10rem]';
+  document.body.style.width = '20em';
+  document.body.style.height = '7em';
   const preferredColorScheme = useColorScheme();
 
   return (
