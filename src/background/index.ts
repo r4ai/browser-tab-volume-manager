@@ -3,15 +3,6 @@ import browser from 'webextension-polyfill';
 import { Message, TabInfo } from '../app/scheme';
 import { getBucket } from '@extend-chrome/storage';
 
-// show welcome page on new install
-browser.runtime.onInstalled.addListener(async (details) => {
-  if (details.reason === 'install') {
-    //show the welcome page
-    const url = browser.runtime.getURL('welcome/welcome.html');
-    await browser.tabs.create({ url });
-  }
-});
-
 // Handle messages from popup
 browser.runtime.onMessage.addListener(async (message: Message) => {
   try {
